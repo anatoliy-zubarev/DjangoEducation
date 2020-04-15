@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from firtsapp import views
+from validformapp import views
 
 
 from django.conf.urls.static import static
@@ -24,6 +25,7 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('<int:pizza_id>/', views.pizza_detail, name='pizza-detail'),
+    path('formpage/', views.form_view, name='form-page')
+#    path('<int:pizza_id>/', views.pizza_detail, name='pizza-detail'),
 #    path('test_app/', include('testurlapp.test_urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
