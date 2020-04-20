@@ -18,13 +18,16 @@ from django.urls import path, include
 from firtsapp import views
 from authapp import views
 
-
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
+    path('authapp/login/', auth_views.auth_login,
+         {'template_name': 'authapp/login.html'},
+         name='authapp-login'),
 #    path('formpage/', views.form_page, name='form-pages')
 #    path('<int:pizza_id>/', views.pizza_detail, name='pizza-detail'),
 #    path('test_app/', include('testurlapp.test_urls'))
