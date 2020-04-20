@@ -8,7 +8,8 @@
 <h2>Вход</h2>
 <form method="post">
     {% csrf_token %}
-    {{ next }}
+    {{ form }}
+    <button type="submit">Выполнить вход</button>
 </form>
 
 </body>
