@@ -6,6 +6,12 @@
 </head>
 <body>
     <h2>Sign UP</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ user_form }}
+        {{ pizzashop_form }}
+        <button type="submit">Авторизация</button>
+    </form>
 
 </body>
 </html>

@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class PizzaShop(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='pizza_shop')
     name = models.CharField(max_length=30)
-    logo = models.ImageField(upload_to='pizzashop_log/', blank=False)
+    logo = models.ImageField(upload_to='pizzashop_logo/', blank=False)
 
     def __str__(self):
         return self.name
