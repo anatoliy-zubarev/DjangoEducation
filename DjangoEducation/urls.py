@@ -25,7 +25,10 @@ from django.contrib.auth import views as auth_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('authapp/login/', auth_views.LoginView.as_view(template_name='authapp/login.html')),
+    path('authapp/login/', auth_views.LoginView.as_view(template_name='authapp/login.html'), name='authapp-login'),
+    path('authapp/loginout/', auth_views.LogoutView.as_view(next_page='/'), name='authapp-logout'),
+    path('authapp/', views.authapp_home, name='authapp-home'),
+    path('authapp/sing-up/', views.authapp_sign_up, name='authapp-sign-up'),
 #    path('formpage/', views.form_page, name='form-pages')
 #    path('<int:pizza_id>/', views.pizza_detail, name='pizza-detail'),
 #    path('test_app/', include('testurlapp.test_urls'))
